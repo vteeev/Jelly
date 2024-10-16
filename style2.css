@@ -12,20 +12,8 @@ body{
     background-size: cover;
 
     background-color: white;
-    background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
 }
-@keyframes color{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
-}
+
 html,body{
     margin: 0;
     min-height: 100vh;
@@ -37,7 +25,7 @@ header{
 
     padding: 10px 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
     grid-gap: 0.7em;
     
 
@@ -46,7 +34,7 @@ header{
 }
 #header1{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     text-align: center;
     align-items: center;
 
@@ -152,17 +140,25 @@ switch input{
     text-align: center;
     justify-content: right;
     align-items: center;
-    margin-right: 10px;
+
 }
  @media(max-width:560px){
     #header1{
         justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    #header-mid{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     #header2{
         justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 }
-
 .logowanie{
 
     border-top-left-radius: 20px;
@@ -179,28 +175,6 @@ switch input{
 
     cursor: pointer;
     border: none;
-}
-
-#header4{
-
-    background-color: aliceblue;
-    border-radius: 25px;
-    width: 40%;
-    height: 80%;
-
-    font-size: 10px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
- @media(max-width:560px){
-    #header1{
-        justify-content: center;
-    }
-    #header2{
-        justify-content: center;
-    }
 }
 
 
@@ -247,35 +221,48 @@ main{
 
 section{
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-gap: 0.7em;
+    
+
     justify-content: center;
+    justify-items: center;
 }
 .card-restaurants{
-    margin: 40px 20px;
+    width: 400px;
+    height: 315px;
+    margin: 25px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #f7f7f7;
-    box-shadow: 0 2px 6px rgb(109, 109, 109);
+    text-align: left;
+    border-radius: 25px;
+    
 }
-
-#ikonka{
-
-align-items: center; 
-display: flex;
+.card-restaurants img{
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
 }
-
+.card-restaurants h1{
+    margin:10px 0;
+}
+.restaurants-info{
+    width: 100%;
+    height: 100%;
+}
 .ship {
     margin-left: 6px;
     position: relative;
     top: -6px;
 }
-
-.price {
-    margin-left: 30px;
-    position: relative;
-    top: -6px;
+.info{
+    width: 100%;
+    border-top: 1.5px dotted grey;
 }
 
-.star {
-    margin-right: 10px; 
-}
+
+
 
