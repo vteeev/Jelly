@@ -5,7 +5,7 @@
   }
 
 body{
-    background-image: url(zdjecieJedzenia2.jpg);
+
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -17,21 +17,40 @@ body{
 html,body{
     margin: 0;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+
     height: 100%;
 }
 header{
 
     padding: 10px 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    grid-gap: 0.7em;
-    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     color: rgb(124 255 147);
     justify-content: space-between;
 }
+.header div {
+    flex: 1;
+    text-align: center;
+}
+@media (max-width: 768px) {/*nie dziala*/
+    header {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 230px;
+        width: 100%;
+    }
+    header div {
+    
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
 #header1{
     display: flex;
     justify-content: center;
@@ -41,7 +60,7 @@ header{
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 64px;
+    font-size: 40px;
 
     text-shadow: 2px 2px 0px rgb(124 255 147),   /* Czarny cień po prawej i na dole */
                  -2px -2px 0px rgb(124 255 147), /* Czarny cień po lewej i na górze */
@@ -50,114 +69,102 @@ header{
     
     color: #fff;
 }
+#header1 img{
+    width: 48px;
+    height: 48px;
+}
 #header-mid{
-    justify-content: center;
+    
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-
 
 }
-.switch{
+.toggle{
     position: relative;
+}
+
+.toggle input{
+    position: absolute;;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle .onoff{
+    
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slider{
+    margin-top: 30px;
+    position: relative;
+    display: block;
+
+    cursor: pointer;
+    background-color: rgb(124 255 147);
+    transition: 0.4s;
     width: 200px;
     height: 50px;
-    border-radius: 25px;
 }
-.switch input{
-    appearance: none;
-    width: 200px;
-    height:50px;
-    border-radius: 25px;
-    background:#1E1E1E;
-    outline: none;
-}
-.switch input::before,
-.switch input::after{
-    z-index: 2;
+
+.slider:before{
+    content: "";
     position: absolute;
-    top: 56%;
-    transform: translateY(-50%);
-    font-weight: bolder;
+    height: 40px;
+    width: 100px;
+    background-color: #fff;
+    transition: 0.4s;
+    top: 5px;
+    left: 5px;
 }
-.switch input::before{
-    content: "Odbiór";
-    right: 30px;
+
+input:checked + .slider{
+    background-color: black;
+    
 }
-.switch input::after{
-    content: "Dostawa";
-    left: 30px;
+input:checked + .slider:before{
+    transform: translateX(90px);
 }
-.switch input:checked{
-    background: rgb(124 255 147);
+
+.slider.round{
+    border-radius: 60px;
 }
-.switch label{
-    z-index: 1;
+.slider.round::before{
+    border-radius: 60px;
+}
+
+.delivery-options{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
     position: absolute;
-    top:10px;
-    bottom: 4px;
-    border-radius: 20px;
 }
-switch input{
-    transition: 0.25s;
+#first-d-o{
+    color: rgb(124 255 147);
+    top: 15px;
+    left: 12px;
 }
-.switch input:checked::after,
-.switch input:checked::before{
-    color: #fff;
-    transition: color 0.5;
+#secound-d-o{
+    color: black;
+    top: 15px;
+    right: 14px;
 }
-.switch input:checked+label{
-    left: 10px;
-    right: 100px;
-    background: #1E1E1E;
-    transition: left 0.4s,right 0.4s 0.2s;
-}
-.switch input:not(:checked){
-    background: #1E1E1E;
-    transition: background 0.4s;
-}
-.switch input:not(:checked)::before{
-    color: #fff;
-    transition: color 0.5s;
-}
-.switch input:not(:checked)::after{
-    color: #fff;
-    transition: color 0.5s 0.2s;
-}
-.switch input:not(:checked)+label{
-    left: 100px;
-    right: 10px;
-    background:rgb(124 255 147);
-    transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
-}
-#switcher:hover{
-    cursor: pointer;
-}
+
+
+
 #header2{
 
-    font-size: 36px;
+    font-size: 28px;
     display: flex;
     text-align: center;
     justify-content: right;
     align-items: center;
 
-}
- @media(max-width:560px){
-    #header1{
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-    #header-mid{
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-    #header2{
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
 }
 .logowanie{
 
@@ -165,61 +172,26 @@ switch input{
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 10px;
+    padding: 8px;
 
     background-color: rgb(124 255 147);
     color: black;
-    font-size: 16px;
+    font-size: 12px;
     font-family: "Kanit", sans-serif;
     font-weight: 250;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
     border: none;
 }
 
 
-main{
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: auto;
-    margin-right: auto;
-}
-.card-items{
-    width: 200px;
-    height: 240px;
 
-    margin: 10px;
-    margin-top: 60px;
 
-    border-radius: 25px;
-    background-color: white;
-    box-shadow: 0 2px 6px rgb(230, 230, 230);
-}
-.card-items img {
-    width: 100%; /* Ustawienie szerokości obrazu na 100% */
-    height: auto;
-    display: block;
-    border-radius: 25px; /* Zaokrąglenie obrazów */
-}
-.card-names{
-    height: 40px;
-    width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    color: black;
-
-    font-family: "Kanit", sans-serif;
-    font-weight: 200;
-    font-weight: bold;
-    font-size: 22px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section{
+#section-2{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
@@ -230,11 +202,12 @@ section{
     justify-items: center;
 }
 .card-restaurants{
-    width: 400px;
-    height: 315px;
+    width: 295px;
+    height: 225px;
     margin: 25px 20px;
     
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     background: #f7f7f7;
@@ -246,23 +219,100 @@ section{
     border-top-left-radius:25px;
     border-top-right-radius:25px;
 }
+.zdj-backgr{
+    width: 100%;
+    height: auto;
+}
+
 .card-restaurants h1{
     margin:10px 0;
 }
 .restaurants-info{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 40px;
+}
+.restaurants-info2{
+    height: 20px;
+    font-size: 10px;
+    margin-left: 20px;
+}
+.restaurants-info2 h1{
+    margin: 0;
 }
 .ship {
-    margin-left: 6px;
-    position: relative;
-    top: -6px;
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+    font-size: 12px;
 }
 .info{
+    height: 20px;
     width: 100%;
     border-top: 1.5px dotted grey;
+    display: flex;
+    align-items: center; /* Centrowanie pionowe */
+
 }
-
-
-
-
+.icon-section2{
+    width: 18px;
+    height: 18px;
+}
+.icon-dolar{
+    width: 14px;
+    height: 14px;
+    margin-left: -2px;
+}
+@media(max-width:1190px){
+    .card-restaurants{
+        width: 380px;
+        height: 305px;
+    }
+    .card-restaurants .zdj-backgr{
+        width: 100% !important;  /* Obraz zajmie całą szerokość kontenera */
+    height: auto !important; /* Wysokość zostanie automatycznie dostosowana, aby zachować proporcje */
+    display: block !important;
+    }
+}
+@media(max-width:908px){
+    .card-restaurants{
+        width: 380px;
+        height: 305px;
+    }
+    .card-restaurants .zdj-backgr{
+        width: 100% !important;  /* Obraz zajmie całą szerokość kontenera */
+    height: auto !important; /* Wysokość zostanie automatycznie dostosowana, aby zachować proporcje */
+    display: block !important;
+    }
+}
+@media(max-width:610px){
+    .card-restaurants{
+        width: 400px;
+        height: 310px;
+    }
+    .card-restaurants .zdj-backgr{
+        width: 100% !important;  /* Obraz zajmie całą szerokość kontenera */
+    height: auto !important; /* Wysokość zostanie automatycznie dostosowana, aby zachować proporcje */
+    display: block !important;
+    }
+}
+@media(max-width:430px){
+    .card-restaurants{
+        width: 300px;
+        height: 235px;
+    }
+    .card-restaurants .zdj-backgr{
+        width: 100% !important;  /* Obraz zajmie całą szerokość kontenera */
+    height: auto !important; /* Wysokość zostanie automatycznie dostosowana, aby zachować proporcje */
+    display: block !important;
+    }
+    .icon-section2{
+        width: 16px;
+        height: 16px;
+    }
+    .ship {
+        font-size: 16px; /* Przykładowa wielkość tekstu, można dostosować */
+        margin-left: 10px; /* Odstęp między tekstem a obrazkiem */
+    }
+}
