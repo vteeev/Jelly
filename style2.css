@@ -69,6 +69,12 @@ header{
     
     color: #fff;
 }
+#header1 a{
+    text-shadow: 1.3px 1.3px 0px rgb(255, 255, 255),   /* Czarny cień po prawej i na dole */
+    -1.3px  1.3px 0px rgb(255, 255, 255), /* Czarny cień po lewej i na górze */
+    1.3px  -1.3px  0px rgb(255, 255, 255),  /* Czarny cień po lewej i na dole */
+    -1.3px  -1.3px  0px rgb(255, 255, 255);
+}
 #header1 img{
     width: 48px;
     height: 48px;
@@ -164,6 +170,23 @@ input:checked + .slider:before{
     text-align: center;
     justify-content: right;
     align-items: center;
+
+}
+#header2 #shop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+
+    transition: 0.5s ease;
+}
+#header2 #shop:hover{
+    background-color: #eeeeee;
+}
+#header2 #shop img{
 
 }
 .logowanie{
