@@ -186,9 +186,7 @@ input:checked + .slider:before{
 #header2 #shop:hover{
     background-color: #eeeeee;
 }
-#header2 #shop img{
 
-}
 .logowanie{
 
     border-top-left-radius: 20px;
@@ -338,4 +336,115 @@ input:checked + .slider:before{
         font-size: 16px; /* Przykładowa wielkość tekstu, można dostosować */
         margin-left: 10px; /* Odstęp między tekstem a obrazkiem */
     }
+}
+
+.ultra-regular {
+    font-family: "Ultra", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  footer{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    font-family: "Ultra", serif;
+}
+.break-footer{
+    height: 50px;
+}
+.footer-container{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+#footer1{
+    width: 160px;
+    height: 300px;
+}
+#footer1 img{
+    margin-left: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#footer2{
+    width: 400px;
+    height: 300px;
+
+    display: flex;
+    text-align: left;
+}
+.footer-container-card{
+    width: 165px;
+    height: 100%;
+    margin-right: 30px;
+}
+.footer-container-card h3{
+    margin: 16px 0;
+}
+#footer2 ul{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #adadad;
+    text-decoration: none;
+    margin: 0;
+
+    display: inline-block;
+    padding-left: 37px;
+}
+#footer2 li{
+    position: relative;
+    display: inline-block; /* Ustawienie w linii, by podkreślenie było pod tekstem */
+    padding: 5px;
+
+    color: #f7f7f7;
+    
+    font-size: 22px;
+
+    list-style: none;
+    cursor: pointer;
+}
+#footer2 li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Możesz dostosować grubość linii */
+    background-color: currentColor; /* Używa koloru tekstu */
+    transition: width 0.5s ease; /* Ustawienie płynnej animacji */
+}
+
+#footer2 li:hover::after {
+    width: 100%; /* Podkreślenie pojawia się na całej szerokości */
+}
+#footer-info{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+#footer-info1{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 30px;
+}
+.text-f-info1{
+    font-size: 14px;
+    color: white;
+    margin-right: 25px;
+}
+.text-f-info1:hover{
+    text-decoration: underline;
+}
+.text-f-info2{
+    font-size: 14px;
+    color: rgb(152, 152, 152);
+    margin-right: 15px;
 }

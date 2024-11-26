@@ -142,7 +142,6 @@ body {
 .tranding-slide-content .tranding-slide-content-bottom {
   position: absolute;
   bottom: 2rem;
-  left: 2rem;
   color: var(--white);
 }
 
@@ -234,3 +233,22 @@ body {
 .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
+
+.tranding-slide-content-bottom{
+  width: 100%;
+}
+
+
+
+.food-name{
+  font-size: 23px;
+  font-weight: bold;
+  color: white; text-shadow: 
+  0.5px 0.5px 0px rgb(133, 133, 133),  /* Cień w prawo i w dół */
+  -0.5px -0.5px 0px rgb(133, 133, 133), /* Cień w lewo i w górę */
+  0.5px -0.5px 0px rgb(133, 133, 133), /* Cień w prawo i w górę */
+  -0.5px 0.5px 0px rgb(133, 133, 133); /* Cień w lewo i w dół */
+  width: 100%;
+  text-align: center;
+}
+
